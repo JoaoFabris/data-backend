@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",// Significado: O compilador vai traduzir seu código TypeScript para uma versão do JavaScript
+    //  compatível com o padrão de 2020.
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
+//Contexto: Esse é o padrão clássico do Node.js. Isso sugere fortemente que esse projeto é um backend em Node e não um projeto que roda direto no navegador 
+// (que geralmente prefere "ESNext" ou "ES2020").
