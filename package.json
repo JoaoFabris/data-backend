@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "challenge": "ts-node src/index.ts",
-    "dev": "nodemon --exec ts-node src/challenge-7.ts",
+    "dev": "nodemon --exec ts-node",
     "start": "ts-node src/challenge-7.ts",
     "challenge-8": "nodemon --exec ts-node src/challenge-8.ts",
     "build": "tsc"

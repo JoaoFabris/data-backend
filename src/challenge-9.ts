@@ -47,9 +47,23 @@ type TransactionsResponse = {
 
 type TypeTrans = "credito" | "debito"
 
+function validDate(dateToString: string): boolean {
+    const dataRegex = /^\d{4}-\d{2}-\d{2}$/
+    if (!dataRegex.test(dateToString)) {
+        return false
+    }
+    const date = new Date(dateToString);
+    if (isNaN(date.getTime())) {
+        return false
+    }
+
+    const isoToString = date.toISOString().split("T")[0]
+    return isoToString === dateToString
+}
+
 function validDataTransactions(dataTrans: Transactions[]): TransactionsResponse {
     const LIMITE_SUSPEITO = 10000;
-    if(dataTrans.length === 0 ) {
+    if (dataTrans.length === 0) {
         throw new Error("Lista vazia")
     }
     const totalTransacoes = dataTrans.length

@@ -72,10 +72,20 @@ function isValidISODate(dateString: string): boolean {
     }
 
     const date = new Date(dateString); //"2025-01-02", "00:00:00.000Z"
-    if (isNaN(date.getTime())) {
+    if (isNaN(date.getTime())) { //Porque getTime() é a forma correta e confiável de verificar se um objeto Date é válido em JavaScript.
         return false;
     }
 
+    //     new Date("2024-01-01").getTime() // 1704067200000
+    // new Date("abcd").getTime()      // NaN
+    // Ou seja:
+
+    // Data válida → número
+
+    // Data inválida → NaN
+    //O JavaScript corrige datas inválidas automaticamente:
+    // new Date("2024-02-30") 
+    // vira 2024-03-01
     const isoString = date.toISOString().split("T")[0]; // Converte o objeto Date para o formato ISO 8601 padrão, sempre em UTC. "2025-01-02T00:00:00.000Z" 
     // Quando você faz:.split("T")  // { "2025-01-02", "00:00:00.000Z" } Ou seja:Antes do "T" → data Depois do "T" → hora \\  ele pega "2025-01-02"
     return isoString === dateString;
@@ -136,17 +146,17 @@ function processTransaction(transactions: Transaction[]) {
     })
 
     const userSummaries = Object.values(userMap) // aqui ele vai pegar apenas os values de cada key dentro desse array //
-//     userSummaries: [
-//     { userId: 1, totalCredit: 2400, totalDebit: 300, balance: 2100 },
-//     { userId: 2, totalCredit: 500, totalDebit: 800, balance: -300 }
-//   ],
+    //     userSummaries: [
+    //     { userId: 1, totalCredit: 2400, totalDebit: 300, balance: 2100 },
+    //     { userId: 2, totalCredit: 500, totalDebit: 800, balance: -300 }
+    //   ],
 
-// SE NÃO 
+    // SE NÃO 
 
-// userSummaries: {
-//     '1': { userId: 1, totalCredit: 2400, totalDebit: 300, balance: 2100 },
-//     '2': { userId: 2, totalCredit: 500, totalDebit: 800, balance: -300 }
-//   },
+    // userSummaries: {
+    //     '1': { userId: 1, totalCredit: 2400, totalDebit: 300, balance: 2100 },
+    //     '2': { userId: 2, totalCredit: 500, totalDebit: 800, balance: -300 }
+    //   },
 
 
 

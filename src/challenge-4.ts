@@ -72,7 +72,7 @@ function validDateISO(dataToString: string): boolean {
         return false
     }
 
-    const isoToString = date.toISOString().split("T")[0]
+    const isoToString = date.toISOString().split("T")[0] //O JavaScript corrige datas inválidas automaticamente:
     return isoToString === dataToString
 
 }

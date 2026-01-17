@@ -129,8 +129,7 @@ app.delete('/risks/:id', (req: Request, res: Response) => {
         return res.status(404).json({ error: "Risco não encontrado" })
     }
 
-    const riscoRemovido = riscos.splice(risco, 1)
-
+    riscos.splice(risco, 1)
     res.status(204).json({ message: "Risco deletado" });
 })
 
