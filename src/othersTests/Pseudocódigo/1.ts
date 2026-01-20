@@ -19,7 +19,7 @@ function isPrimePseu(n: number): boolean {
     }
     for (let i = 2; i <= Math.sqrt(n); i++) {
         if (n % i === 0) {
-            return false // se ele retornar com valor '0' na restante da divi, entao ele tem um divisor, ou seja, n é primo
+            return false // se ele retornar com valor '0' na restante da divi, entao ele tem um divisor, ou seja, n é primo. Resto zero ⇒ existe divisor ⇒ não é primo
         }
     }
     return true
