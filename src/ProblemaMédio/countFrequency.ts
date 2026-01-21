@@ -95,9 +95,9 @@ function countLetters1(word: string): Record<string, number> {
 
 function countLetters2(word: string): Record<string, number> {
   const result: Record<string, number> = {}
-  for(const letter of word) {
-    if(result[letter]) {
-      result[letter] ++
+  for (const letter of word) {
+    if (result[letter]) {
+      result[letter]++
     } else {
       result[letter] = 1
     }
@@ -130,9 +130,51 @@ function countLetters3(word: string): Record<string, number> {
 // Input: "oi tudo bem tudo oi"
 // Output: { oi: 2, tudo: 2, bem: 1 }
 
+function countFreqWord(phrase: string): Record<string, number> {
+  const result: Record<string, number> = {}
+  const pharasSpli = phrase.split(" "); // dessa forma o split ira criar um array e seperar o a frase em palavras separadamente
+  //[ 'oi', 'tudo', 'bem', 'tudo', 'oi' ]
+  for (let i = 0; i < pharasSpli.length; i++) {
+    const element = pharasSpli[i]
+
+    if (result[element]) {
+      result[element]++
+    } else {
+      result[element] = 1
+    }
+  }
+  return result
+}
+
+// Exercício 4 — Classificar números por paridade
+// PROBLEMA
+
+// Crie uma função que recebe um array de números e retorna um objeto
+// contendo quantos números são pares e quantos são ímpares.
+
+// Input: [1, 2, 3, 4, 5]
+// Output: { par: 2, impar: 3 }
+
+function countEvenandOdd(arr: number[]): Record<string, number> {
+  const result: Record<string, number> = {
+    pares: 0,
+    impar: 0
+  }
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i]
+    if (arr[i] % 2 === 0) {
+      result['pares']++
+    } else {
+      result['impar']++
+    }
+  }
+  return result
+}
+  // console.log(countFrequency(fruits));
+  // console.log(countNumb(count));
+  // console.log(countLetters1(word));
+  console.log(countFreqWord("oi tudo bem tudo oi"));
+  console.log(countEvenandOdd([1, 2, 3, 4, 5]));
 
 
-console.log(countFrequency(fruits));
-console.log(countNumb(count));
-console.log(countLetters(word));
 
