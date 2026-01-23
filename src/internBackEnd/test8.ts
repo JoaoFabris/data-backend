@@ -47,3 +47,6 @@ function normalizarInvestimentos(lista: Transacao[]) {
 
 console.log(normalizarInvestimentos(transacoesBrutas));
 // Esperado: [ { id: 1, valorLiquido: 950 }, { id: 3, valorLiquido: 4750.475 } ]
+
+// Você pode “dar return direto” quando está transformando uma coleção em outra.
+// Você NÃO pode “dar return direto” quando precisa acumular resultado aos poucos.

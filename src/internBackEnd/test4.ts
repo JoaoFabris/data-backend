@@ -29,8 +29,8 @@ const viagens: Viagem[] = [
 ];
 
 function listarMotoristasOcupados(lista: Viagem[]): string {
-    const result = lista.filter((e) => e.info.caminhao.ocupado).map(e => e.info.motorista).join(", ")
-    return result
+    return lista.filter((e) => e.info.caminhao.ocupado).map(e => e.info.motorista).join(", ")
+    
 }
 
 console.log(listarMotoristasOcupados(viagens)); // Esperado: "Carlos, Beatriz"
