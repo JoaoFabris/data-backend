@@ -52,7 +52,7 @@ function contarVogais(texto: string) {
 // Teste:
 console.log(contarVogais("hello world")); // 3
 
-function elementoMaisFrequente(array: number[]) {
+function elementoMaisFrequente(array: number[]): number {
     const freq: Record<string, number> = {}
 
     for (let i = 0; i < array.length; i++) {
@@ -63,12 +63,21 @@ function elementoMaisFrequente(array: number[]) {
             freq[element] = 1
         }
     }
-    for(const obj in freq){
-        console.log(obj, 'esses sao os obj');
-        
+    let test = 0
+    let key = 0
+    for (const obj in freq) {
+        if (freq[obj] > test) {
+            test = freq[obj]
+            key = Number(obj)
+        }
+
     }
+    return key
+    
 
 }
 
 // Teste:
-console.log(elementoMaisFrequente([1, 2, 2, 3, 3, 3, 4])); // 3
+console.log(elementoMaisFrequente([1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4])); // 3
+
+

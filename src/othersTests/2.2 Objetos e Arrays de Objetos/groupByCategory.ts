@@ -5,6 +5,8 @@ interface Product {
     price: number;
 }
 
+type category = 'Eletrônicos' | 'Móveis' | 'Livros'
+
 
 const productsMock: Product[] = [
     { name: "Notebook Dell", category: "Eletrônicos", price: 4500 },
