@@ -37,7 +37,7 @@ const empresasEntrada2: Empresa2[] = [
 ];
 
 // 2. Implemente a função de processamento
-function processarEmpresas(lista: Empresa2[]): Empresa2[] {
+function processarEmpresas2(lista: Empresa2[]): Empresa2[] {
    return lista.filter((a) => a.status !== 'inativo').map(empresa => {
     let score = 0
     if(empresa.faturamento > 100000) {
@@ -53,4 +53,4 @@ function processarEmpresas(lista: Empresa2[]): Empresa2[] {
 }
 
 // Teste o resultado
-console.log(processarEmpresas(empresasEntrada));
+console.log(processarEmpresas2(empresasEntrada));
