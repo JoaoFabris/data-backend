@@ -1,11 +1,11 @@
 //Exercício 17: Filtrar usuários maiores de idade
 
-interface User {
+interface User4 {
   name: string;
   age: number;
 }
 
-const usersMock: User[] = [
+const usersMock: User4[] = [
   { name: "Ana", age: 17 },
   { name: "Bruno", age: 18 },
   { name: "Carlos", age: 25 },
@@ -15,7 +15,7 @@ const usersMock: User[] = [
 ];
 
 
-function filterAdults(users: User[]): User[] {
+function filterAdults(users: User4[]): User4[] {
     return users.filter(u => u.age >= 18)
 
 }
